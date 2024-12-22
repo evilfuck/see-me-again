@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Art</h2>
+<p>Click on the buttons inside the tabbed menu below to see high quality versions of the art made for this project!</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Ito Saihara')">Ito</button>
+  <button class="tablinks" onclick="openCity(event, 'Naj')">Naj</button>
+  <button class="tablinks" onclick="openCity(event, 'Basil')">Basil</button>
+</div>
+
+<div id="Ito Saihara" class="tabcontent">
+  <h3>Ito Saihara</h3>
+  <img src="https://media.discordapp.net/attachments/1005344913254269000/1318820087834349589/camcomm.png?ex=6769a52b&is=676853ab&hm=97424d329dd54d67483982806ee2f2121fbe809f3fd521c178cfde10343b5249&=&format=webp&quality=lossless&width=1201&height=675" width="960" height="540" alt="Ito's Commission" class="center"> 
+</div>
+
+<div id="Naj" class="tabcontent">
+  <h3>Naj</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Basil" class="tabcontent">
+  <h3>Basil</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
