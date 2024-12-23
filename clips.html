@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEVER SEE ME AGAIN - CLIPS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px 0;
+            background-color: #333;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e63946;
+            text-transform: uppercase;
+        }
+
+        .filter {
+            margin: 20px 0;
+        }
+
+        .filter select {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-card {
+            background-color: #333;
+            border-radius: 5px;
+            width: 300px;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .video-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
+            color: #e63946;
+        }
+
+        .video-card p {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        .break {
+            flex-basis: 100;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">NEVER SEE ME AGAIN - CLIPS</div>
+    </header>
+
+    <div class="filter">
+        <label for="filter">Filter by Sender: </label>
+        <select id="filter" onchange="filterVideos()">
+            <option value="all">All</option>
+            <option value="ash">Ashstat</option>
+            <option value="srife">Srife5</option>
+            <option value="person3">Person 3</option>
+        </select>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <div class="video-card" data-sender="ash">
+            <video controls>
+                <source src="https://github.com/evilfuck/see-me-again/raw/refs/heads/main/images/clips/ash/immgonnacover_you_in_milkj.mp4" type="video/mp4">
+            </video>
+            <h3>I'm gonna cover you in milk</h3>
+            <p>Recorded on 10/28/24.</p>
+        </div>
+        <div class="video-card" data-sender="ash">
+            <video controls>
+                <source src="https://github.com/evilfuck/see-me-again/raw/refs/heads/main/images/clips/ash/hypothetical.mp4" type="video/mp4">
+            </video>
+            <h3>Hypothetical</h3>
+            <p>Recorded on 10/10/24</p>
+        </div>
+        <div class="video-card" data-sender="ash">
+            <video controls>
+                <source src="https://github.com/evilfuck/see-me-again/raw/refs/heads/main/images/clips/ash/PUT%20ME%20DOWN.mp4" type="video/mp4">
+            </video>
+            <h3>PUT ME DOWN</h3>
+            <p>Recorded on (ill add this later)</p>
+        </div>
+        <div class="video-card" data-sender="ash">
+            <video controls>
+                <source src="https://github.com/evilfuck/see-me-again/raw/refs/heads/main/images/clips/ash/stop%20hitting%20me.mp4" type="video/mp4">
+            </video>
+            <h3>I cant say that</h3>
+            <p>Recorded on (ill add this later)</p>
+        </div>
+        <div class="video-card" data-sender="srife">
+            <video controls>
+                <source src="https://github.com/evilfuck/see-me-again/raw/refs/heads/main/images/clips/srife/decoy_being_big.mp4" type="video/mp4">
+            </video>
+            <h3>Dog bark..?</h3>
+            <p>Recorded on 1/1/24</p>
+        </div>
+    </div>
+
+    <script>
+        function filterVideos() {
+            const filter = document.getElementById('filter').value;
+            const videoCards = document.querySelectorAll('.video-card');
+
+            videoCards.forEach(card => {
+                if (filter === 'all' || card.dataset.sender === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Reapply breaks after filtering
+            const visibleCards = Array.from(videoCards).filter(card => card.style.display !== 'none');
+            document.querySelectorAll('.break').forEach(breakLine => breakLine.remove());
+
+            visibleCards.forEach((card, index) => {
+                if ((index + 1) % 4 === 0) {
+                    const breakElement = document.createElement('div');
+                    breakElement.classList.add('break');
+                    card.after(breakElement);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

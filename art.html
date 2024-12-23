@@ -1,100 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEVER SEE ME AGAIN - Art</title>
+    <style>
+        header {
+            padding: 20px;
+            background-color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e63946;
+            text-transform: uppercase;
+        }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* padding: 10px; */
+        }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+        .box {
+            background-color: #e63946;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            height: 50px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
+        .box:hover {
+            background-color: #ff6b6b;
+        }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  background-image: url(https://i.imgur.com/1TTw26U.jpg);
-  background-color: rgba(255, 255, 255, 0.485);
-  background-blend-mode: overlay;
-  width: 1920px;
-  height: 1080px;
-  text-align: center;
-}
-</style>
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: rgba(255, 255, 255, 0.485);
+            background-blend-mode: overlay;
+            width: 1920px;
+            height: 1080px;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">NEVER SEE ME AGAIN - ART</div>
+    </header>
 
-<h2>Art</h2>
-<p>Click on the buttons inside the tabbed menu below to see high quality versions of the art made for this project!</p>
+    <h1>Click on one of the boxes below to show off all of the specified artist's contributions!</h1>
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Ito Saihara')">Ito</button>
-  <button class="tablinks" onclick="openCity(event, 'Paige')">Paige</button>
-  <button class="tablinks" onclick="openCity(event, 'Basil')">Basil</button>
-</div>
+    <div class="container">
+        <div class="box" onclick="showResult(event, 'Ito')">Ito Saihara</div>
+        <div class="box" onclick="showResult(event, 'Paige')">Paige</div>
+    </div>
 
-<div id="Ito Saihara" class="tabcontent">
-  <h3>Ito Saihara</h3>
-  <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/ito.png?raw=true" width="960" height="540" alt="Ito's Commission" class="center"> 
-</div>
+    <div id="Ito" class="tabcontent">
+        <h3>Ito Saihara</h3>
+        <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/ito.png?raw=true" width="960" height="540" alt="Ito's Commission" class="center"> 
+    </div>
+      
+    <div id="Paige" class="tabcontent">
+        <h3>Paige</h3>
+        <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/paige/cam.gif?raw=true" alt="Paige's Commission (pt. 1)" class="center"> 
+        <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/paige/cam2.gif?raw=true" alt="Paige's Commission (pt. 2)" class="center"> 
+      </div>
 
-<div id="Paige" class="tabcontent">
-  <h3>Paige</h3>
-  <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/paige/cam.gif?raw=true" alt="Paige's Commission (pt. 1)" class="center"> 
-  <img src="https://github.com/evilfuck/see-me-again/blob/main/images/commissions/paige/cam2.gif?raw=true" alt="Paige's Commission (pt. 2)" class="center"> 
-
-</div>
-
-<div id="Basil" class="tabcontent">
-  <h3>Basil</h3>
-  <p>orgh</p>
-</div>
-
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-   
-
-<a href="https://evilfuck.github.io/see-me-again/">BACK</p>
+    <script>
+        function showResult(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
-</html> 
+</html>
