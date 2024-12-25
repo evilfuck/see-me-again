@@ -73,6 +73,9 @@
             height: 1080px;
             text-align: center;
         }
+        .tabcontent p {
+            padding: 12px 12px;
+        }
 
     </style>
 </head>
@@ -86,18 +89,26 @@
     <div class="container">
         <div class="box" onclick="showResult(event, 'Ito')">Ito Saihara</div>
         <div class="box" onclick="showResult(event, 'Paige')">Paige</div>
+        <div class="box" onclick="showResult(event, 'Naj')">Naj</div>
     </div>
 
     <div id="Ito" class="tabcontent">
         <h3>Ito Saihara</h3>
         <img src="images/commissions/ito.png" width="960" height="540" alt="Ito's Commission" class="center"> 
+        <p>It's honestly been a pretty scary year for me. 2023 was taking the big steps that came with turning 18 and going to college, so 2024 was about learning how to live in the shoes of a proper adult for me. A lot of good things happened to me personally, like properly getting used to both my majors, getting my driver's license and losing like… 30 kilos, like a buncha good stuff happened, I'm rlly proud!! But also a lot of bullshit happened that made this year a pain. Genuinely feels like i got over so many challenges, so much happened it felt like multiple years went by in just one LOL<br>I feel like this next year is, for a lot of us, gonna continue, or even start that scary journey of adulthood. It's been hard so far but, taking that first step into the rest of your life is honestly pretty cool. You should be proud that you've made it to here!<br>Be the change you wanna see in the world. Keep on moving foward with your goals, and never, EVER settle for less. Let's hope for an awesome 2025!<br><br>-Ito</p>
     </div>
       
     <div id="Paige" class="tabcontent">
         <h3>Paige</h3>
         <img src="images/commissions/paige/cam.gif" alt="Paige's Commission (pt. 1)" class="center"> 
         <img src="images/commissions/paige/cam2.gif" alt="Paige's Commission (pt. 2)" class="center"> 
-      </div>
+    </div>
+
+    <div id="Naj" class="tabcontent">
+        <h3>Naj</h3>
+        <img src="images/commissions/naj.png"></img><br>
+        <img src="images/commissions/fat.gif"></img>
+    </div>
 
     <script>
         function showResult(evt, cityName) {
